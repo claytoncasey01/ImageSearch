@@ -2,3 +2,4 @@ __pycache__/*
 .idea/*
 query_images/*
 dataset/*
+*.csv
