@@ -1,6 +1,7 @@
 import numpy as np
 import csv
 
+
 class Searcher:
     def __init__(self, indexPath):
         # store our index path
@@ -40,6 +41,10 @@ class Searcher:
         # return our limited results
         return results[:limit]
 
-
     def chi2_distance(self, histA, histB, eps=1e-10):
-        pass
+        # compute the chi-squared distance
+        d = 0.5 * np.sum([((a - b) ** 2) / (a + b + eps)
+                          for (a, b) in zip(histA, histB)])
+
+        # return the che-squared distance
+        return d
